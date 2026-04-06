@@ -212,6 +212,32 @@ _, decision = ta.propagate("NVDA", "2026-01-15")
 print(decision)
 ```
 
+#### LLM Gateway
+
+If you have access to an OpenAI-compatible LLM gateway (such as the Optimizely LLM Gateway), you can route all LLM calls through it:
+
+```bash
+export LLM_GATEWAY_URL=http://svc-utility-belt.optimizely.com/llm-gateway/v1
+export LLM_GATEWAY_API_KEY=your-gateway-key
+```
+
+```python
+config = DEFAULT_CONFIG.copy()
+config["llm_provider"] = "gateway"
+config["deep_think_llm"] = "google-vertex/claude-opus-4-6"
+config["quick_think_llm"] = "google-vertex/gemini-3.1-flash-lite-preview"
+
+ta = TradingAgentsGraph(debug=True, config=config)
+```
+
+Available gateway models:
+| Model | Identifier |
+|-------|-----------|
+| Gemini 3.1 Flash Lite | `google-vertex/gemini-3.1-flash-lite-preview` |
+| Gemini 3.1 Pro | `google-vertex/gemini-3.1-pro-preview` |
+| Claude Sonnet 4.6 | `google-vertex/claude-sonnet-4-6` |
+| Claude Opus 4.6 | `google-vertex/claude-opus-4-6` |
+
 See `tradingagents/default_config.py` for all configuration options.
 
 ## Contributing
