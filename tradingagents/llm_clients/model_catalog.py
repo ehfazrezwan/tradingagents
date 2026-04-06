@@ -63,6 +63,17 @@ MODEL_OPTIONS: ProviderModeOptions = {
             ("Grok 4.1 Fast (Non-Reasoning) - Speed optimized, 2M ctx", "grok-4-1-fast-non-reasoning"),
         ],
     },
+    "gateway": {
+        "quick": [
+            ("Gemini 3.1 Flash Lite - Cheap/fast via gateway", "google-vertex/gemini-3.1-flash-lite-preview"),
+            ("Claude Sonnet 4.6 - Default workhorse via gateway", "google-vertex/claude-sonnet-4-6"),
+        ],
+        "deep": [
+            ("Claude Opus 4.6 - Most capable via gateway", "google-vertex/claude-opus-4-6"),
+            ("Gemini 3.1 Pro - High intelligence via gateway", "google-vertex/gemini-3.1-pro-preview"),
+            ("Claude Sonnet 4.6 - Default workhorse via gateway", "google-vertex/claude-sonnet-4-6"),
+        ],
+    },
     # OpenRouter models are fetched dynamically at CLI runtime.
     # No static entries needed; any model ID is accepted by the validator.
     "ollama": {
