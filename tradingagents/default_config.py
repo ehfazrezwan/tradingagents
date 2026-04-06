@@ -12,6 +12,11 @@ DEFAULT_CONFIG = {
     "deep_think_llm": "gpt-5.4",
     "quick_think_llm": "gpt-5.4-mini",
     "backend_url": "https://api.openai.com/v1",
+    # Gateway provider preset (uncomment to use):
+    # "llm_provider": "gateway",
+    # "deep_think_llm": "google-vertex/claude-opus-4-6",
+    # "quick_think_llm": "google-vertex/gemini-3.1-flash-lite-preview",
+    # "backend_url": os.getenv("LLM_GATEWAY_URL", "http://svc-utility-belt.optimizely.com/llm-gateway/v1"),
     # Provider-specific thinking configuration
     "google_thinking_level": None,      # "high", "minimal", etc.
     "openai_reasoning_effort": None,    # "medium", "high", "low"
