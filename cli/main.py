@@ -1204,5 +1204,12 @@ def analyze():
     run_analysis()
 
 
+@app.command()
+def backtest():
+    """Run a backtest over a date range with portfolio tracking and metrics."""
+    from tradingagents.backtesting.cli_commands import run_backtest_cli
+    run_backtest_cli()
+
+
 if __name__ == "__main__":
     app()
